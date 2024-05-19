@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port Traffic Analysis Dashboard</title>
-    <h1>By tableauwarriors</h1>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="dashboardContainer">
         <h1>Port Traffic Analysis Dashboard</h1>
+        <h1>By tableauwarriors</h1>
         <div id="visualization"></div>
     </div>
     <div class='tableauPlaceholder' id='viz1716128196476' style='position: relative'>
@@ -31,12 +31,20 @@
     </div>                
     <script type='text/javascript'>                    
         var divElement = document.getElementById('viz1716128196476');                    
-        var vizElement = divElement.getElementsByTagName('object')[0];                    
-        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+        var vizElement = divElement.getElementsByTagName('object')[0]; 
+        function adjustVizSize() {
+            var width = divElement.offsetWidth;
+            vizElement.style.width = '100%';
+            vizElement.style.height = (width * 0.75) + 'px'; // Maintain aspect ratio of 4:3
+        }                   
+        window.onresize = adjustVizSize; // Adjust size on window resize
+        adjustVizSize(); // Initial size adjustment
+
         var scriptElement = document.createElement('script');                    
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
         vizElement.parentNode.insertBefore(scriptElement, vizElement);                
     </script>
+
     
     <div id="descriptionContainer">
         <h2>Description</h2>
