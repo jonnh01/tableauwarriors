@@ -58,7 +58,16 @@ font-size:16px;
         vizElement.parentNode.insertBefore(scriptElement, vizElement);                
     </script>
 
+    <div id="descriptionContainer">
+        <h2>Description</h2>
+               <p>One different formula that we created is weighted volume. We based it on the perceived importance or impact of each type of crossing. For example, we set all trains to have a weight of 2.0, all trucks have a weight of 1.5, all buses have a weight of 1.2, and everything else at 1.0. This metric was then used to rank how busy the ports were, excluding the total volume of vehicles crossed. The graph below the table shows the different types of traffic that pass through each port. 
 
+In order to rank the ports, we used the weighted volume field using the guidance above. Then, we created a new calculated field and used the following formula: “RANK_UNIQUE([Total Weighted Volume])”.
+</p>
+        
+
+    </div>
+    
 
     <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/U.S._states_and_territories_by_population_density.svg/1200px-U.S._states_and_territories_by_population_density.svg.png" alt="USA Population Density Map" width="800" height="400" class="center"></center>
     
@@ -209,16 +218,6 @@ font-size:16px;
         var scriptElement = document.createElement('script');                    
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
         vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
-
-    <div id="descriptionContainer">
-        <h2>Description</h2>
-               <p>One different formula that we created is weighted volume. We based it on the perceived importance or impact of each type of crossing. For example, we set all trains to have a weight of 2.0, all trucks have a weight of 1.5, all buses have a weight of 1.2, and everything else at 1.0. This metric was then used to rank how busy the ports were, excluding the total volume of vehicles crossed. The graph below the table shows the different types of traffic that pass through each port. 
-
-In order to rank the ports, we used the weighted volume field using the guidance above. Then, we created a new calculated field and used the following formula: “RANK_UNIQUE([Total Weighted Volume])”.
-</p>
-        
-
     </div>
     
     <script src="script.js"></script>
